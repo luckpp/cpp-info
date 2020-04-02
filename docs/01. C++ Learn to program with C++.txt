@@ -1,0 +1,48 @@
+Compilers: VC++, g++, clang
+
+Compiler error:
+- in Visual Studio go to Output window -> click the error code -> press F1
+
+
+Variables:
+auto a = 10; // auto is a request to the compiler to determine the type of the variable
+
+Loops:
+vector<int> vi;
+...
+for (auto item : vi) // range based for -> new in C++11
+{
+	cout << item;
+}
+
+Constructor:
+- Account acct(); // this is a function declaration that thakes no params and returns an Account, not an object instance creation (even if Account is a class)
+
+
+Includes:
+
+#pragma once // only on windows
+- makes sure that things are not included multiple times (no multiple declarations)
+
+Makefiles:
+- example is available in SimpleClasses solution
+
+Casting:
+- static_cast<> ( int i = (int)4.9; | same as | int i = static_cast<int>(4.9) )
+- dynamic_cast<>
+- const_cast<>
+- reinterpret_cast<>
+-> NOTE: the old-style cast is equivalent to all casts above
+
+Optimization:
+- 'const' can make things faster
+	- it is important to do 'const' early in the project in order to make things simpler
+- pass object by reference (avoids copying it):
+	int Print(Transaction& t);
+OR  int Print(const Transaction& t); // put const to make sure you intent is not to change the obj
+
+To learn:
+- exceptions
+- the free store (raw pointers, shared_ptr/unique_ptr, RAII, Rule of 3, Rule of 5)
+	- https://en.cppreference.com/w/cpp/language/rule_of_three
+- labdas
